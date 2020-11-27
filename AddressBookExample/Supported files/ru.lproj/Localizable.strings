@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  AddressBookExample
+
+  Created by Raman Harhun on 26.11.2020.
+  
+*/
+
+"info" = "Информация";
+"addressbook" = "Контакты";
+"permissionError" = "Не удалось получить доступ к контактам";
+"ok" = "Понял";
+"emptyContact" = "Контакт без информации";
+"emptyContactError" = "Нет информации для отображения";

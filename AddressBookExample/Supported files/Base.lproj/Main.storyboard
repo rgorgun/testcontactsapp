@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BPs-Vq-xRH">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="WFm-m6-cuo">
+            <objects>
+                <navigationController id="BPs-Vq-xRH" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gY9-iP-rso">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="siH-Ob-hjC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YCd-X4-o8n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-790" y="-273"/>
+        </scene>
+        <!--Contacts List View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ContactsListViewController" customModule="AddressBookExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="n8i-xm-R8u">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="wWM-Bf-TZy"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="n8i-xm-R8u" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="GHQ-CH-5Th"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="n8i-xm-R8u" secondAttribute="bottom" id="H7v-zO-WYf"/>
+                            <constraint firstItem="n8i-xm-R8u" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="VEY-mT-Mle"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="n8i-xm-R8u" secondAttribute="trailing" id="z0k-op-qqm"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="DtX-h0-Ewo"/>
+                    <connections>
+                        <outlet property="tableView" destination="n8i-xm-R8u" id="gAN-1U-eDR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="59" y="-273"/>
+        </scene>
+        <!--Contact Info View Controller-->
+        <scene sceneID="nUy-LO-pLw">
+            <objects>
+                <viewController storyboardIdentifier="ContactInfoViewController" id="3AD-pz-wN3" customClass="ContactInfoViewController" customModule="AddressBookExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fG6-zI-PbG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qKT-zo-RRO">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="3AD-pz-wN3" id="qPY-am-wze"/>
+                                    <outlet property="delegate" destination="3AD-pz-wN3" id="BqP-2j-mrz"/>
+                                </connections>
+                            </tableView>
+                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="200" translatesAutoresizingMaskIntoConstraints="NO" id="MoQ-4D-idZ" customClass="ContactInfoHeaderView" customModule="AddressBookExample" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="414" height="200"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="oMq-aq-4ck"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="qKT-zo-RRO" firstAttribute="leading" secondItem="oMq-aq-4ck" secondAttribute="leading" id="0vv-ns-M7D"/>
+                            <constraint firstItem="oMq-aq-4ck" firstAttribute="trailing" secondItem="qKT-zo-RRO" secondAttribute="trailing" id="SAz-gE-o2I"/>
+                            <constraint firstItem="qKT-zo-RRO" firstAttribute="top" secondItem="oMq-aq-4ck" secondAttribute="top" id="UWx-WZ-aN2"/>
+                            <constraint firstItem="oMq-aq-4ck" firstAttribute="bottom" secondItem="qKT-zo-RRO" secondAttribute="bottom" id="dmB-I1-nR7"/>
+                            <constraint firstItem="MoQ-4D-idZ" firstAttribute="top" secondItem="oMq-aq-4ck" secondAttribute="top" id="gXN-vC-r9r"/>
+                            <constraint firstItem="oMq-aq-4ck" firstAttribute="trailing" secondItem="MoQ-4D-idZ" secondAttribute="trailing" id="inC-NW-YFO"/>
+                            <constraint firstItem="MoQ-4D-idZ" firstAttribute="leading" secondItem="oMq-aq-4ck" secondAttribute="leading" id="qGx-Pe-YP5"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="headerView" destination="MoQ-4D-idZ" id="8fO-VZ-0EM"/>
+                        <outlet property="tableView" destination="qKT-zo-RRO" id="ahO-VK-79M"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t34-Ee-Um9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="885" y="-272"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
